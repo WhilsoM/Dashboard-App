@@ -1,0 +1,10 @@
+@import './variables.scss';
+@import 'normalize.css';
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: $bg-color;
+}
