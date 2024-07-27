@@ -44,6 +44,10 @@
 	width: 20px;
 }
 
+.close {
+	cursor: pointer;
+}
+
 .active {
 	background-color: #010519 !important;
 	color: $white !important;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import s from './ui/Header.module.scss'
 
@@ -18,7 +18,17 @@ const months = {
 }
 
 const Header = () => {
+	const [inputValue, setInputValue] = useState('')
+	const [imgSrc, setImgSrc] = useState('search.svg')
 	const date = new Date()
+
+	useEffect(() => {
+		if (inputValue.length !== 0) {
+			setImgSrc('close.svg')
+		} else {
+			setImgSrc('search.svg')
+		}
+	}, [inputValue])
 
 	const getWeek = (date) => {
 		const week = [
@@ -34,6 +44,17 @@ const Header = () => {
 		return week[date.getDay()]
 	}
 
+	const handleChange = (e) => {
+		const value = e.target.value
+
+		setInputValue(value)
+		console.log(value)
+	}
+
+	const clearInput = () => {
+		setInputValue('')
+	}
+
 	return (
 		<header className={s.header}>
 			<div className={s.container}>
@@ -43,8 +64,18 @@ const Header = () => {
 							type='text'
 							className={s.wrapper__input}
 							placeholder='Search'
+							onChange={handleChange}
+							value={inputValue}
 						/>
-						<img src='/search.svg' alt='loupe' className={s.wrapper__loupe} />
+						<img
+							src={`/${imgSrc}`}
+							alt={imgSrc}
+							className={`
+                ${s.wrapper__loupe}
+                ${imgSrc === 'close.svg' ? s.close : ''}
+                `}
+							onClick={clearInput}
+						/>
 					</div>
 
 					<div className={s.selectDay}>
