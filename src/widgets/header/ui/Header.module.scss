@@ -1,0 +1,71 @@
+@import '../../../styles/variables.scss';
+
+.header {
+	background-color: $white;
+	padding: 10px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+
+	border-radius: $border-radius;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 20px;
+		font-size: 1.5rem;
+	}
+}
+
+.header__wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	width: 80%;
+}
+
+.wrapper__input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	padding: 15px 15px;
+}
+.input__wrapper {
+	display: flex;
+	align-items: center;
+	border-radius: $border-radius-50;
+	position: relative;
+	background-color: $gray;
+	width: 40%;
+}
+
+.wrapper__loupe {
+	position: absolute;
+	right: 20px;
+	width: 20px;
+}
+
+.active {
+	background-color: #010519 !important;
+	color: $white !important;
+}
+
+.switchCardList {
+	border-radius: $border-radius-50;
+	width: 20%;
+	background-color: $gray;
+}
+
+.btn {
+	background-color: $gray;
+	cursor: pointer;
+	border-radius: $border-radius-50;
+	font-size: 1.2rem;
+	width: 50%;
+	padding: 15px;
+	border: none;
+	color: #010519;
+
+	&:focus {
+		outline: none;
+	}
+}
