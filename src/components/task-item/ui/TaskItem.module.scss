@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+.tasks__wrapper { 
+  display: grid;
+  grid-template-columns: repeat(6, 280px);
+
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  & div:last-child {
+    width: 100px;
+  }
+}
+.tasksWrapper__checkbox_name { 
+  display: flex;
+  gap: 15px;
+}
+.name {
+  font-size: 1.1rem;
+}
+
+.done {
+  background-color: greenyellow;
+  color: green;
+  padding: 2px 4px;
+  width: max-content;
+}
+
+.inProgress {
+  padding: 2px 4px;
+  color: blue;
+  width: max-content;
+  background-color: skyblue;
+}
+
+.admin__right {
+  margin-left: 35px;
+}
+
+.finishDate__wrapper { 
+  display: flex;
+  justify-content: flex-end;
+}
+.finishDate {
+  width: max-content;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: gainsboro;
+}

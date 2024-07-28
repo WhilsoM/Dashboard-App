@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import './variables.scss';
 @import 'normalize.css';
 @import './fonts.scss';
@@ -11,6 +15,7 @@
 html {
 	font-size: 62.5%;
 }
+
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -30,18 +35,32 @@ body {
 	overflow-y: auto;
 }
 
-.tasks,
-.productivity,
-.projects-in-progress {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: $border-radius;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	margin-bottom: 20px;
-}
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
 
-.tasks h2,
-.productivity h2,
-.projects-in-progress h2 {
-	margin-bottom: 10px;
+  &:checked {
+    background-image: url('/check-mark.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
+  &:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

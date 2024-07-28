@@ -1,6 +1,19 @@
 import React from 'react'
 
+import { NavLink } from 'react-router-dom'
 import s from './ui/Sidebar.module.scss'
+
+
+const isActiveLink = ({ isActive }) => ({
+  display: 'block',
+  fontSize: '1.2rem',
+  color: isActive ? '#fff' : '',
+  borderRadius: '50px',
+  padding: isActive ? '15px' : '',
+  backgroundColor: isActive ? "#333" : "",
+  marginLeft: isActive ? '-15px' : ''
+})
+
 
 const Sidebar = () => {
 	return (
@@ -11,12 +24,54 @@ const Sidebar = () => {
 				</div>
 				<nav className={s.menu}>
 					<ul>
-						<li>Dashboard</li>
-						<li>Projects</li>
-						<li className={s.active}>Task list</li>
-						<li>Services</li>
-						<li>Notifications</li>
-						<li>Chat</li>
+						<li>
+							<NavLink 
+                style={isActiveLink}
+                to='/'
+              >
+                Dashboard
+              </NavLink>
+						</li>
+						<li>
+							<NavLink
+                style={isActiveLink}
+                to='/projects'
+              >
+                Projects
+              </NavLink>
+						</li>
+						<li>
+              <NavLink 
+                style={isActiveLink}
+                to='/task-list'
+              >
+                Task list
+              </NavLink>
+            </li>
+						<li>
+							<NavLink
+                style={isActiveLink}
+                to='/services'
+              >
+                Services
+              </NavLink>
+						</li>
+						<li>
+							<NavLink
+                style={isActiveLink}
+                to='/notifications'
+              >
+                Notifications
+              </NavLink>
+						</li>
+						<li>
+							<NavLink
+                style={isActiveLink}
+                to='/chat'
+              >
+                Chat
+              </NavLink>
+						</li>
 					</ul>
 				</nav>
 			</div>
