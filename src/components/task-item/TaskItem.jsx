@@ -5,13 +5,12 @@ export const TaskItem = ({ task }) => {
   const [stateStatus, setStateStatus] = useState('In progress')
   
   const getStyleForStatus = () => {  
-    if (stateStatus === 'In progress') {
-      return s.inProgress
-    }
-  
+    if (stateStatus === 'In progress') return s.inProgress
+    
     return stateStatus === 'Done' ? s.done : ''
   }
   
+
   const switchStatus = (e) => {
     const isChecked = e.target.checked
     

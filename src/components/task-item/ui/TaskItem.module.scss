@@ -20,17 +20,17 @@
 }
 
 .done {
-  background-color: greenyellow;
-  color: green;
+  background-color: $green-color;
+  color: $green-text-color;
   padding: 2px 4px;
   width: max-content;
 }
 
 .inProgress {
   padding: 2px 4px;
-  color: blue;
+  color: $blue-text-color;
   width: max-content;
-  background-color: skyblue;
+  background-color: $sky-blue-color;
 }
 
 .admin__right {
